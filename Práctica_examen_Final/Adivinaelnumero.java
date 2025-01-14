@@ -17,6 +17,7 @@ class AdivinaelNumero {
         while (turnos < turnosMaximos && !adivinado) {
             System.out.println("Estás en el intento #" + (turnos++));
             eleccionJugador = entrada.nextInt();
+            entrada.close();
 
             String MENSAJE_MAYOR_O_MENOR = (eleccionJugador > eleccionOrdenador)
                     ? "El número que has elegido mayor que el del ordenador"
