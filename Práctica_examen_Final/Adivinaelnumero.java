@@ -18,18 +18,14 @@ class AdivinaelNumero {
             System.out.println("Estás en el intento #" + (turnos++));
             eleccionJugador = entrada.nextInt();
 
-            if (eleccionJugador == eleccionOrdenador) {
-                System.out.println("Ganaste, tu elección fue: " + eleccionJugador + " y el ordenador eligio: "
-                        + eleccionOrdenador);
-            } else {
-                System.out.println("Perdiste, el número del ordenador era " + eleccionOrdenador);
-            }
+            String MENSAJE_MAYOR_O_MENOR = (eleccionJugador > eleccionOrdenador)
+                    ? "El número que has elegido mayor que el del ordenador"
+                    : "El número escogido es menor que el del ordenador";
+            System.out.println(MENSAJE_MAYOR_O_MENOR);
 
-            if (eleccionJugador < eleccionOrdenador) {
-                System.out.println("Tu número es muy bajo");
-            } else {
-                System.out.println("Tu número es muy alto");
-            }
+            String resultado = (eleccionJugador == eleccionOrdenador) ? "Haz ganado, felicidades"
+                    : "No adivinaste, sigue intentando";
+            System.out.println(resultado);
         }
     }
 
