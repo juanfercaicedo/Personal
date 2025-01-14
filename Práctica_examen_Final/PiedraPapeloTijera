@@ -1,0 +1,11 @@
+import java.util.Scanner;
+
+class PiedraPapeloTiejera{
+    public static void main(String[]args){
+        Scanner entrada = new Scanner(System.in);
+        final int Piedra = 1; 
+        final int Papel = 2;
+        final int Tijera = 3;
+        
+    }
+}
