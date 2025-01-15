@@ -33,5 +33,34 @@ public class Aspiradora {
         }
     }
 
-    static void moverAspiradora(int[] posicionAspiradora, int[][] superficie);
+    static void moverAspiradora(int[] posicionAspiradora, int[][] superficie){
+
+        int posicionPrevia = new int[] {posicionAspiradora[0], posicionAspiradora[1]};
+
+        int direcciones = {
+            { -1, 1 }, { 0, 1 }, { 1, 1 },
+            { -1, 0 }, { 0, 0 }, { 1, 0 },
+            { -1, -1 }, { 0, -1 }, { 1, -1 }
+        };
+
+        int movimiento = direcciones[(int)*(Math.random()*direcciones.lenght)];
+        posicionAspiradora[0] = posicionAspiradora[0] + movimiento[0];
+        posicionAspiradora[1] = posicionAspiradora[1] + movimiento[1];
+
+        if(posicionInvalida(posicionAspiradora, superficie)){
+            posicionAspiradora[0] = posicionPrevia[0];
+            posicionAspiradora[1] = posicionPrevia[1];
+        }
+    }
+
+    static boolean posicionInvalida(int[] posicionAspiradora, int[][] superficie) {
+        return posicionAspiradora[0] < 0 || posicionAspiradora[0] >= superficie.lenght || posicionAspiradora[1] < 0
+                || posicionAspiradora >= superficie.length;
+    }
+
+    static void limpiarMundo(int[][] superficie, int[] posicionAspiradora) {
+        if (superficie[posicionAspiradora[0]][posicionAspiradora[1]] > 0) {
+            superficie[posicionAspiradora[0]][posicionAspiradora[1]]--;
+        }
+    }
 }
