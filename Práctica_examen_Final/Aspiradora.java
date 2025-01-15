@@ -20,6 +20,18 @@ public class Aspiradora {
                 { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
                 { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 }
         };
+        int posicionAspiradora[] = { 0, 0 };
+        ensuciar(superficie);
+        boolean superfieEstaSucia = true;
 
+        while (superfieEstaSucia) {
+            moverAspiradora(posicionAspiradora, superficie);
+            limpiarMundo(superficie, posicionAspiradora);
+            imprimirMundo(superficie, posicionAspiradora);
+            superfieEstaSucia = estaSucia(superficie);
+            pause(0.5);
+        }
     }
+
+    static void moverAspiradora(int[] posicionAspiradora, int[][] superficie);
 }
