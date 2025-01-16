@@ -110,7 +110,7 @@ public class Aspiradora {
         try {
             Thread.sleep((int) (1000 * seconds));
         } catch (InterruptedException e) {
-            //
+
         }
     }
 }
