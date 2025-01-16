@@ -76,7 +76,7 @@ public class Aspiradora {
                 if (posicionAspiradora[0] == row && posicionAspiradora[1] == column) {
                     System.out.println(mapaAspiradora());
                 } else {
-                    System.out.println(mapValueToTitle(unMapa[row][column]));
+                    System.out.print(mapValueToTitle(unMapa[row][column]));
                 }
             }
             System.out.println();
