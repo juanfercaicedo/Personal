@@ -160,5 +160,6 @@ class Ascensores {
 
     private static String convertirPiso(int piso, int PISO_BASE) {
         return (piso + PISO_BASE == 0) ? "B" : Integer.toString(piso + PISO_BASE);
+
     }
 }
