@@ -6,6 +6,7 @@
 
 - La abstracción consiste en ocultar los detalles complejos de un objeto y mostrar solo las características esenciales que son relevantes para el contexto en el que se está trabajando.
 - Te permite trabajar con ideas generales y dejar detalles en concreto para después o para otras partes del código
+- En palabras más simple, la abstracción es un proceso mental de extracción de las características esenciales de algo
 
 #### Ejemplo
 
@@ -90,7 +91,7 @@ public class Main {
    Cada componente funciona de manera independiente, pero interactúa con los demás para que el auto funcione correctamente.
 
 - Estos cuatro conceptos (AEJM), hacen que un código sea comprensible, escalable y flexible
-- Un código al ser CEF -> permite reducir los costos de mantenimiento(Correctivo, perfectivo y adaptativo)
+- Un código al ser CEF, permite reducir los costos de mantenimiento(Correctivo, perfectivo y adaptativo)
 - Al reducir los costos de mantenimiento, se reducen los costos de desarrollo
 
 ## Leyes de Lheman y Belady
