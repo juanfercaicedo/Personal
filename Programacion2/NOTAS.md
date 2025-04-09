@@ -107,10 +107,10 @@ public class Main {
 
 ## Conceptos
 
-- Qué es una clase?
+- ¿Qué es una clase?
   Es una abstracción de datos y operaciones, que reúne las operaciones y datos de elementos de un universo de un mismo tipo
 
-- Qué es un objeto?
+- ¿Qué es un objeto?
   Es un ejemplar/instancia de una clase, por ende no es parte de una clase
 
 - Definición atributo
