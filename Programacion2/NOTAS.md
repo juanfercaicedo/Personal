@@ -1,4 +1,15 @@
-Notas programación 2
+# Notas programación II
+
+## Programación orientada a objetos
+
+- Abstracción: La abstracción consiste en ocultar los detalles complejos de un objeto y mostrar solo las características esenciales que son relevantes para el contexto en el que se está trabajando.
+
+### Ejemplo
+
+- Desde la perspectiva del conductor: Solo necesita saber cómo acelerar, frenar y girar el volante. No necesita entender cómo funciona el motor o la transmisión.
+- Desde la perspectiva del mecánico: Necesita conocer los detalles internos del motor, la caja de cambios, etc.
+
+-
 
 - Qué es una clase?
   Es una abstracción de datos y operaciones, que reúne las operaciones y datos de elementos de un universo de un mismo tipo
