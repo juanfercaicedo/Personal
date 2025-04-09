@@ -5,6 +5,7 @@
 ### Abstracción
 
 - La abstracción consiste en ocultar los detalles complejos de un objeto y mostrar solo las características esenciales que son relevantes para el contexto en el que se está trabajando.
+- Te permite trabajar con ideas generales y dejar detalles en concreto para después o para otras partes del código
 
 #### Ejemplo
 
@@ -86,8 +87,22 @@ public class Main {
 2. Transmisión → Controla la velocidad y dirección.
 3. Frenos → Detiene el vehículo.
 4. Sistema de combustible → Alimenta al motor.
+   Cada componente funciona de manera independiente, pero interactúa con los demás para que el auto funcione correctamente.
 
-Cada componente funciona de manera independiente, pero interactúa con los demás para que el auto funcione correctamente.
+- Estos cuatro conceptos (AEJM), hacen que un código sea comprensible, escalable y flexible
+- Un código al ser CEF -> permite reducir los costos de mantenimiento(Correctivo, perfectivo y adaptativo)
+- Al reducir los costos de mantenimiento, se reducen los costos de desarrollo
+
+## Leyes de Lheman y Belady
+
+### Ley de cambio continuo
+
+- Un programa que se usa en el ámbito del mundo real con el paso del tiempo, debe cambiar o convertirse menos útil.
+
+### Ley de complejidad creciente
+
+- Los programas cambian por evolución
+- Este cambio hace que sus estructuras se hagan más complejas, al menos de que se hagan esfuerzos activos para evitar esto
 
 ## Conceptos
 
