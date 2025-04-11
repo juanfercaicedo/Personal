@@ -20,10 +20,9 @@ public class Polinomio {
 
     public void iniciar() {
         int grado = gradoPolinomio.ingresarGrado();
-        String[] mostrarPolinomio = estructuraPolinomio.mostrarPolinomio(grado);
-        String[] ecuacionUsuario = ingresarEcuacion.nuevaEcuacion(mostrarPolinomio);
-        String[] resultadoValidacion = estructuraCorrecta.estructuraValida(ecuacionUsuario, mostrarPolinomio);
+        String[] mostrarEstructuraPolinomios = estructuraPolinomio.mostrarEstructuraPolinomios(grado);
+        String[] polinomio = ingresarEcuacion.ingresarPolinomios(mostrarEstructuraPolinomios);
+        Boolean[] resultadoValidacion = estructuraCorrecta.estructuraValida(polinomio, mostrarEstructuraPolinomios);
         double[] pasear = operaciones.parsear(resultadoValidacion);
-        double[] suma = operaciones.sumaDePolinomio(pasear);
     }
 }

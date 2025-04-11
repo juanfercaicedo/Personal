@@ -9,15 +9,16 @@ public class EstructuraPolinomio {
         return new double[grado + 1];
     }
 
-    public String[] mostrarPolinomio(int grado) {
+    public String[] mostrarEstructuraPolinomios(int grado) {
         String[] estructura = new String[grado + 1];
         for (int i = 0; i <= grado; i++) {
+
             if (i == 0) {
                 estructura[i] = "c";
             } else if (i == 1) {
-                estructura[i] = "ax";
+                estructura[i] = "bx";
             } else {
-                estructura[i] = "a" + i + "x^" + i;
+                estructura[i] = "a" + "x^" + i;
             }
         }
         return estructura;
