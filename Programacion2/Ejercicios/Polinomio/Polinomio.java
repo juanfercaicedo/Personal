@@ -1,5 +1,7 @@
 package Programacion2.Ejercicios.Polinomio;
 
+import java.util.Scanner;
+
 public class Polinomio {
 
     private final IngresarEcuacion ingresarEcuacion;
@@ -20,9 +22,54 @@ public class Polinomio {
 
     public void iniciar() {
         int grado = gradoPolinomio.ingresarGrado();
-        String[] mostrarEstructuraPolinomios = estructuraPolinomio.mostrarEstructuraPolinomios(grado);
-        String[] polinomio = ingresarEcuacion.ingresarPolinomios(mostrarEstructuraPolinomios);
-        Boolean[] resultadoValidacion = estructuraCorrecta.estructuraValida(polinomio, mostrarEstructuraPolinomios);
-        double[] pasear = operaciones.parsear(resultadoValidacion);
+        String[] estructura = estructuraPolinomio.mostrarEstructuraPolinomios(grado);
+
+        System.out.print("¿Cuántos polinomios deseas ingresar? ");
+        int cantidadPolinomios = new Scanner(System.in).nextInt();
+
+        String[][] polinomios = ingresarEcuacion.ingresarPolinomios(cantidadPolinomios, estructura);
+
+        double[][] coeficientes = new double[cantidadPolinomios][];
+        for (int i = 0; i < cantidadPolinomios; i++) {
+            boolean esValido = estructuraCorrecta.estructuraValida(polinomios[i]);
+            if (!esValido) {
+                System.out.println("Polinomio " + (i + 1) + " inválido.");
+                continue;
+            }
+            coeficientes[i] = operaciones.parsear(polinomios[i]);
+        }
+
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("¿Deseas sumar o restar los polinomios? (s/r): ");
+        char operacion = scanner.next().charAt(0);
+
+        double[] resultado;
+        if (operacion == 's' || operacion == 'S') {
+            resultado = operaciones.sumaDePolinomios(coeficientes);
+            System.out.println("Resultado de la suma:");
+        } else if (operacion == 'r' || operacion == 'R') {
+            resultado = operaciones.restaDePolinomios(coeficientes);
+            System.out.println("Resultado de la resta:");
+        } else {
+            System.out.println("Operación no válida.");
+            return;
+        }
+
+        for (int i = 0; i < resultado.length; i++) {
+            System.out.println("x^" + i + ": " + resultado[i]);
+        }
+
+        System.out.print("¿Deseas calcular la derivada de los polinomios? (s/n): ");
+        char calcularDerivada = scanner.next().charAt(0);
+
+        if (calcularDerivada == 's' || calcularDerivada == 'S') {
+            for (int i = 0; i < cantidadPolinomios; i++) {
+                if (coeficientes[i] != null) {
+                    double[] derivadaPolinomio = derivada.calcularDerivada(coeficientes[i]);
+                    System.out.println("Derivada del polinomio " + (i + 1) + ": " + derivada.mostrarPolinomio(derivadaPolinomio));
+                }
+            }
+        }
+        scanner.close();
     }
 }
