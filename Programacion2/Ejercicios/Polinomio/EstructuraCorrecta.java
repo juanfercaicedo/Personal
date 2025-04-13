@@ -35,7 +35,8 @@ public class EstructuraCorrecta {
                         System.out.println("Término de grado " + i + " inválido: " + termino + ". Se esperaba algo como: ax^" + i);
                         return false;
                     }
-                    String coef = termino.substring(0, termino.indexOf("x^"));
+                    String[] partes = termino.split("x\\^");
+                    String coef = partes[0];
                     if (!esNumero(coef)) {
                         System.out.println("Coeficiente inválido para x^" + i + ": " + coef);
                         return false;
@@ -49,7 +50,10 @@ public class EstructuraCorrecta {
     }
 
     private String obtenerCoeficiente(String termino) {
-        String coef = termino.substring(0, termino.length() - 1);
+        String coef = "";
+        for (int i = 0; i < termino.length() - 1; i++) {
+            coef += termino.charAt(i);
+        }
         if (coef.isEmpty()) {
             return "1";
         } else if (coef.equals("-")) {
@@ -74,7 +78,7 @@ public class EstructuraCorrecta {
                 if (cantidadDePuntosDecimales > 1) {
                     return false;
                 }
-            } else if (!Character.isDigit(caracterActual)) {
+            } else if (caracterActual < '0' || caracterActual > '9') {
                 return false;
             }
         }
@@ -82,4 +86,3 @@ public class EstructuraCorrecta {
         return true;
     }
 }
-

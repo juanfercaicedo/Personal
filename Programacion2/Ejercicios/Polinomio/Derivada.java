@@ -2,10 +2,9 @@ package Programacion2.Ejercicios.Polinomio;
 
 public class Derivada {
 
-
     public double[] calcularDerivada(double[] coeficientes) {
         if (coeficientes.length == 0) {
-            return new double[0]; 
+            return new double[0];
         }
 
         double[] derivada = new double[coeficientes.length - 1];

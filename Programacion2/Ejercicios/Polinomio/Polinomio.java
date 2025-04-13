@@ -11,6 +11,8 @@ public class Polinomio {
     private final EstructuraPolinomio estructuraPolinomio;
     private final EstructuraCorrecta estructuraCorrecta;
 
+    Scanner scanner = new Scanner(System.in);
+
     public Polinomio() {
         ingresarEcuacion = new IngresarEcuacion();
         derivada = new Derivada();
@@ -25,7 +27,7 @@ public class Polinomio {
         String[] estructura = estructuraPolinomio.mostrarEstructuraPolinomios(grado);
 
         System.out.print("¿Cuántos polinomios deseas ingresar? ");
-        int cantidadPolinomios = new Scanner(System.in).nextInt();
+        int cantidadPolinomios = scanner.nextInt();
 
         String[][] polinomios = ingresarEcuacion.ingresarPolinomios(cantidadPolinomios, estructura);
 
@@ -39,7 +41,6 @@ public class Polinomio {
             coeficientes[i] = operaciones.parsear(polinomios[i]);
         }
 
-        Scanner scanner = new Scanner(System.in);
         System.out.print("¿Deseas sumar o restar los polinomios? (s/r): ");
         char operacion = scanner.next().charAt(0);
 
