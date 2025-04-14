@@ -18,16 +18,12 @@ public class EstructuraPolinomio {
 
         String[] estructura = new String[grado + 1];
         for (int i = 0; i <= grado; i++) {
-            switch (i) {
-                case 0:
-                    estructura[i] = "c";
-                    break;
-                case 1:
-                    estructura[i] = "bx";
-                    break;
-                default:
-                    estructura[i] = "a" + "x^" + i;
-                    break;
+            if (i == 0) {
+                estructura[i] = "c";
+            } else if (i == 1) {
+                estructura[i] = "bx";
+            } else {
+                estructura[i] = "ax^" + i;
             }
         }
         return estructura;

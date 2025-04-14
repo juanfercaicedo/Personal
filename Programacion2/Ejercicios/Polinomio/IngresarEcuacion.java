@@ -1,5 +1,6 @@
 package Programacion2.Ejercicios.Polinomio;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class IngresarEcuacion {
@@ -10,7 +11,7 @@ public class IngresarEcuacion {
         String[][] polinomios = new String[cantidad][estructura.length];
 
         for (int i = 0; i < cantidad; i++) {
-            System.out.println("Ingresa el polinomio " + (i + 1) + " de la siguiente forma [c, bx, ax^2]: ");
+            System.out.println("Ingresa el polinomio " + (i + 1) + " de la siguiente forma" + Arrays.toString(estructura) + " : ");
             String entrada = scanner.nextLine();
 
             String[] terminos = entrada.split(",");
