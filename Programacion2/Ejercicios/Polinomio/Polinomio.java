@@ -40,24 +40,27 @@ public class Polinomio {
             }
             coeficientes[i] = operaciones.parsear(polinomios[i]);
         }
-
-        System.out.print("¿Deseas sumar o restar los polinomios? (s/r): ");
-        char operacion = scanner.next().charAt(0);
-
-        double[] resultado;
-        if (operacion == 's' || operacion == 'S') {
-            resultado = operaciones.sumaDePolinomios(coeficientes);
-            System.out.println("Resultado de la suma:");
-        } else if (operacion == 'r' || operacion == 'R') {
-            resultado = operaciones.restaDePolinomios(coeficientes);
-            System.out.println("Resultado de la resta:");
+        if (cantidadPolinomios == 1) {
+            System.out.println("Solo se a ingresado un polinomio");
         } else {
-            System.out.println("Operación no válida.");
-            return;
-        }
+            System.out.print("¿Deseas sumar o restar los polinomios? (s/r): ");
+            char operacion = scanner.next().charAt(0);
 
-        for (int i = 0; i < resultado.length; i++) {
-            System.out.println("x^" + i + ": " + resultado[i]);
+            double[] resultado;
+            if (operacion == 's' || operacion == 'S') {
+                resultado = operaciones.sumaDePolinomios(coeficientes);
+                System.out.println("Resultado de la suma:");
+            } else if (operacion == 'r' || operacion == 'R') {
+                resultado = operaciones.restaDePolinomios(coeficientes);
+                System.out.println("Resultado de la resta:");
+            } else {
+                System.out.println("Operación no válida.");
+                return;
+            }
+
+            for (int i = 0; i < resultado.length; i++) {
+                System.out.println("x^" + i + ": " + resultado[i]);
+            }
         }
 
         System.out.print("¿Deseas calcular la derivada de los polinomios? (s/n): ");
