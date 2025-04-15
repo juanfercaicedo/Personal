@@ -10,7 +10,7 @@ public class Derivada {
         double[] derivada = new double[coeficientes.length - 1];
 
         for (int i = 1; i < coeficientes.length; i++) {
-            derivada[i - 1] = coeficientes[i] * i; // n * a_n
+            derivada[i - 1] = coeficientes[i] * i;
         }
 
         return derivada;

@@ -40,9 +40,25 @@ public class Polinomio {
             }
             coeficientes[i] = operaciones.parsear(polinomios[i]);
         }
-        if (cantidadPolinomios == 1) {
-            System.out.println("Solo se a ingresado un polinomio");
-        } else {
+
+        while (cantidadPolinomios == 1) {
+            System.out.print("¿Deseas calcular la derivada de los polinomio? (s/n): ");
+            char calcularDerivada = scanner.next().charAt(0);
+
+            if (calcularDerivada == 's' || calcularDerivada == 'S') {
+                for (int i = 0; i < cantidadPolinomios; i++) {
+                    if (coeficientes[i] != null) {
+                        double[] derivadaPolinomio = derivada.calcularDerivada(coeficientes[i]);
+                        System.out.println("Derivada del polinomio " + (i + 1) + ": "
+                                + derivada.mostrarPolinomio(derivadaPolinomio));
+                    }
+                }
+            }
+            break;
+        }
+
+        if (cantidadPolinomios > 1) {
+
             System.out.print("¿Deseas sumar o restar los polinomios? (s/r): ");
             char operacion = scanner.next().charAt(0);
 
@@ -61,19 +77,20 @@ public class Polinomio {
             for (int i = 0; i < resultado.length; i++) {
                 System.out.println("x^" + i + ": " + resultado[i]);
             }
-        }
 
-        System.out.print("¿Deseas calcular la derivada de los polinomios? (s/n): ");
-        char calcularDerivada = scanner.next().charAt(0);
+            System.out.print("¿Deseas calcular la derivada de los polinomios? (s/n): ");
+            char calcularDerivada = scanner.next().charAt(0);
 
-        if (calcularDerivada == 's' || calcularDerivada == 'S') {
-            for (int i = 0; i < cantidadPolinomios; i++) {
-                if (coeficientes[i] != null) {
-                    double[] derivadaPolinomio = derivada.calcularDerivada(coeficientes[i]);
-                    System.out.println("Derivada del polinomio " + (i + 1) + ": " + derivada.mostrarPolinomio(derivadaPolinomio));
+            if (calcularDerivada == 's' || calcularDerivada == 'S') {
+                for (int i = 0; i < cantidadPolinomios; i++) {
+                    if (coeficientes[i] != null) {
+                        double[] derivadaPolinomio = derivada.calcularDerivada(coeficientes[i]);
+                        System.out.println("Derivada del polinomio " + (i + 1) + ": "
+                                + derivada.mostrarPolinomio(derivadaPolinomio));
+                    }
                 }
             }
+            scanner.close();
         }
-        scanner.close();
     }
 }
