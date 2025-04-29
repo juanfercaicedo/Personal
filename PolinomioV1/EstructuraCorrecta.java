@@ -1,4 +1,4 @@
-package Programacion2.Ejercicios.Polinomio;
+package PolinomioV1;
 
 public class EstructuraCorrecta {
 
@@ -32,7 +32,8 @@ public class EstructuraCorrecta {
                 default -> {
                     String esperado = "x^" + i;
                     if (!termino.contains(esperado)) {
-                        System.out.println("Término de grado " + i + " inválido: " + termino + ". Se esperaba algo como: ax^" + i);
+                        System.out.println(
+                                "Término de grado " + i + " inválido: " + termino + ". Se esperaba algo como: ax^" + i);
                         return false;
                     }
                     String[] partes = termino.split("x\\^");

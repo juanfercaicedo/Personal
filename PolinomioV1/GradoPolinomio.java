@@ -1,4 +1,4 @@
-package Programacion2.Ejercicios.Polinomio;
+package PolinomioV1;
 
 import java.util.Scanner;
 

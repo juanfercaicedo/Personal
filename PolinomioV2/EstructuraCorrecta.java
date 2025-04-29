@@ -1,4 +1,4 @@
-package Polinomio;
+package PolinomioV2;
 
 public class EstructuraCorrecta {
 

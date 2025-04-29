@@ -1,4 +1,4 @@
-package Polinomio;
+package PolinomioV1;
 
 public class Operaciones {
 

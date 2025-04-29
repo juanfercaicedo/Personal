@@ -1,49 +1,35 @@
-package Polinomio;
+package PolinomioV1;
 
 import java.util.Scanner;
 
 public class Polinomio {
 
+    private final IngresarEcuacion ingresarEcuacion;
     public final Derivada derivada;
     private final Operaciones operaciones;
     private final GradoPolinomio gradoPolinomio;
+    private final EstructuraPolinomio estructuraPolinomio;
     private final EstructuraCorrecta estructuraCorrecta;
 
     Scanner scanner = new Scanner(System.in);
 
     public Polinomio() {
+        ingresarEcuacion = new IngresarEcuacion();
         derivada = new Derivada();
         operaciones = new Operaciones();
         gradoPolinomio = new GradoPolinomio();
+        estructuraPolinomio = new EstructuraPolinomio();
         estructuraCorrecta = new EstructuraCorrecta();
     }
 
     public void iniciar() {
+        int grado = gradoPolinomio.ingresarGrado();
+        String[] estructura = estructuraPolinomio.mostrarEstructuraPolinomios(grado);
 
         System.out.print("¿Cuántos polinomios deseas ingresar? ");
         int cantidadPolinomios = scanner.nextInt();
-        scanner.nextLine(); // consumir newline
 
-        String[][] polinomios = new String[cantidadPolinomios][];
-        int gradoMaximoDetectado = 0;
-
-        // Ingresar polinomios uno por uno
-        for (int i = 0; i < cantidadPolinomios; i++) {
-            System.out.println(
-                    "Ingresa el polinomio " + (i + 1) + " (separa términos por coma, por ejemplo: 5,3x,2x^2): ");
-            String entrada = scanner.nextLine();
-            String[] terminos = entrada.split(",");
-
-            polinomios[i] = new String[terminos.length];
-            for (int j = 0; j < terminos.length; j++) {
-                polinomios[i][j] = terminos[j].trim();
-            }
-
-            int gradoDetectado = gradoPolinomio.detectarGrado(polinomios[i]);
-            if (gradoDetectado > gradoMaximoDetectado) {
-                gradoMaximoDetectado = gradoDetectado;
-            }
-        }
+        String[][] polinomios = ingresarEcuacion.ingresarPolinomios(cantidadPolinomios, estructura);
 
         double[][] coeficientes = new double[cantidadPolinomios][];
         for (int i = 0; i < cantidadPolinomios; i++) {
@@ -52,7 +38,7 @@ public class Polinomio {
                 System.out.println("Polinomio " + (i + 1) + " inválido.");
                 continue;
             }
-            coeficientes[i] = Operaciones.parsear(polinomios[i]);
+            coeficientes[i] = operaciones.parsear(polinomios[i]);
         }
 
         while (cantidadPolinomios == 1) {

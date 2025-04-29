@@ -1,4 +1,4 @@
-package Programacion2.Ejercicios.Polinomio;
+package PolinomioV2;
 
 public class Matematicas {
 
