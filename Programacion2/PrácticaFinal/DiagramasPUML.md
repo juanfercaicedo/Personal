@@ -77,22 +77,22 @@ class Mascota <<singleton>> // estereotipo
 ## Relaciones entre clases
 
 ```puml
-// Herencia
+' Herencia
 ClasePadre <|-- ClaseHija
 
-// Implementación de interfaz
+' Implementación de interfaz
 Interfaz <|.. Clase
 
-// Asociación (uso o referencia)
+' Asociación (uso o referencia)
 ClaseA --> ClaseB
 
-// Agregación (tiene, pero no posee)
+' Agregación (tiene, pero no posee)
 ClaseA o-- ClaseB
 
-// Composición (posee y controla el ciclo de vida)
+' Composición (posee y controla el ciclo de vida)
 ClaseA *-- ClaseB
 
-// Dependencia (usa temporalmente)
+' Dependencia (usa temporalmente)
 ClaseA ..> ClaseB
 
 ```
