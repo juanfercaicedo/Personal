@@ -55,3 +55,4 @@ cola = a -> 1+f(n-1)
 
 ---
 
+- Repo clase: [Recursividad](https://github.com/mmasias/EDA2/tree/main/temario/002-recursividad/bateria)
