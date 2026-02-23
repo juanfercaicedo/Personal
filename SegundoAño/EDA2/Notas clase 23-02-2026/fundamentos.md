@@ -18,6 +18,17 @@
     - Cuando llegamos a una cadena vacía o de un solo carácter, alcanzamos el caso base.
     - Luego las llamadas se van resolviendo en la pila hasta llegar a la llamada inicial.
 
+--- 
+#### Ejemplo
+- **Problema:** En una lista, duplicar sus elementos ([1,2,3] convertirla en [1,1,2,2,3,3])
+    - Caso base: " " -> Vacio
+    - `1,2,3` -> `1,1,2,2,3,3`
+    - `1,2,3,4` -> `1,1,2,2,3,3,4,4`
+        - Para llegar tender un grado menos al caso base debemos:
+        - Igual eliminamos la `cabeza` y la `cola`
+        - `2,3` -> `2,2,3,3`
+            - cabeza cabeza + f(n-1) + cola cola
+
 ---
 ### Más notas de clase:
 - [Inducción](https://github.com/mmasias/EDA2/tree/main/temario/002-recursividad/induccion) 
