@@ -1,6 +1,8 @@
 - Una pirámide es una pirámide con una base de abajo
 - Caso base:
-    - El caso base no tiene recursión
+    - El caso base no detiene recursión
+    - Detiene las llamadas recursivas(Se deja de agregar elementos a las pilas)
+        - Dejamos de apilar elementos por lo tanto empezamos a **resolver**
     - En una pirámide el caso base es un tamaño, porque sabe cuando "deternse"
     - **Caso base detiene**
     - Otro caso base es cuando una tabla de datos está vacía
