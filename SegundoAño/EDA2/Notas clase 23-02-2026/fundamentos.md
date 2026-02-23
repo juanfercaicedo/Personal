@@ -1,11 +1,10 @@
 ### Definiciones
 - **Caso Recursivo**: Se llama a si misma con elemenos diferentes.
     - La llamada debe ser tendiendo (converger) hacia el caso base
-
 - **Caso base**: Detiene la llamada recursiva
     - Devuelve un valor
     - El caso base más sencillo es el **vacío**
-
+---
 #### Ejemplo
 **Palabras Palindromicas:** Palabras que se leen igual de izquierda a derecha 
 - Ejemplo caso base con palabras palindromicas
