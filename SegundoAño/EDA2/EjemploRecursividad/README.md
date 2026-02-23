@@ -14,9 +14,9 @@
 
 ## Recursividad
 - En un método recursivo, la pila crece con cada llamada a sí mismo.
-    - Fase de Expansión: La pila se llena de marcos. Cada marco está "en pausa" esperando a que el siguiente termine.
-    - Punto de Inflexión (Caso Base): Se alcanza la condición de salida. No se crean más marcos.
-    - Fase de Contracción: Los marcos se van resolviendo y eliminando de arriba hacia abajo.
+    - **Fase de Expansión:** La pila se llena de marcos. Cada marco está "en pausa" esperando a que el siguiente termine.
+    - **Punto de Inflexión:** (Caso Base): Se alcanza la condición de salida. No se crean más marcos.
+    - **Fase de Contracción:** Los marcos se van resolviendo y eliminando de arriba hacia abajo.
 
 
 - Para mas notas más detalladas: [Repositorio clase](https://github.com/mmasias/EDA2/blob/main/temario/002-recursividad/laPilaDeLlamadas.md)
