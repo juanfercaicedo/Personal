@@ -15,7 +15,8 @@ public class hanoi {
 
     static void resolverConVisualizacion(int totalDiscos) {
         final char[] nombre = {'A', 'B', 'C'};
-        int[][] torres = new int[3][totalDiscos];
+        final int cantidadColumnas = 3;
+        int[][] torres = new int[cantidadColumnas][totalDiscos];
         for (int i = 0; i < totalDiscos; i++) {
             torres[0][i] = totalDiscos - i;
         }
