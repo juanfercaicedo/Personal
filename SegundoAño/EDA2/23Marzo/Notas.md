@@ -92,7 +92,7 @@ static void cuentaRegresivaIterativa(int n) {
 ## Método Recursivo
 - La función se `llama` a si misma
 - Llamada recursiva, pilas de llamadas
-- [Más notas](../SegundoAño/EDA2/NotasClase18Feb/README.md)
+- [Más notas](../NotasClase18Feb/README.md)
 
 ``` java
 static void cuentaRegresivaRecursiva(int n) {
