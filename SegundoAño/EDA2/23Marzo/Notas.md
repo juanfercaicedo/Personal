@@ -1,8 +1,35 @@
 ## Memoización 
 - Reutilizar un calculo 
 - Evita realizar operaciones costosas varias veces
+- Evita redundancia: Elimina la repetición de operaciones costosas en subproblemas superpuestos.
 - **Definición**: `Técnica de optimización en programación que mejora el rendimiento almacenando en caché los resultados de funciones costosas`
+- Ejemplo:
+``` java
+public class EjemploMemoizacion {
+    
+    // Nuestra "caché" o libreta de apuntes
+    static long[] memo = new long[100]; 
 
+    static long fiboMemo(int n) {
+        // 1. Caso base
+        if (n <= 1) return n;
+        
+        // 2. LA MAGIA DE LA MEMOIZACIÓN: 
+        // Preguntamos: ¿Ya calculé esto para este parámetro 'n' específico?
+        if (memo[n] != 0) {
+            return memo[n]; // ¡Devolvemos el resultado en caché al instante!
+        }
+        
+        // 3. Si no estaba en caché, hacemos el cálculo costoso...
+        long resultado = fiboMemo(n - 1) + fiboMemo(n - 2);
+        
+        // 4. ...y lo guardamos en caché ANTES de devolverlo para usos futuros
+        memo[n] = resultado;
+        
+        return resultado;
+    }
+}
+```
 ## Método Tabular
 - El método tabular es una técnica de optimización dentro de la Programación Dinámica que resuelve problemas de abajo hacia arriba
 - En lugar de empezar por el problema gigante y dividirlo usando recursividad (como hace la memoización), la tabulación hace exactamente lo contrario: se olvida por completo de la recursividad y usa bucles (for o while). Empieza resolviendo los problemas más pequeños y triviales, guarda sus resultados en una "tabla" (que en Java suele ser un array o una matriz), y usa esos datos para ir construyendo las respuestas de los problemas más grandes hasta llegar al objetivo final.
