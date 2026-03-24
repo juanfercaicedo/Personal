@@ -1,6 +1,6 @@
 # Topología
 ## Caso Base:
-- Es el más fácil en la topología recursiva porque es el que para resolverse no tiene ´llamada recursiva´
+- Es el más fácil en la topología recursiva porque es el que para resolverse no tiene `llamada recursiva`
     - **Llamada Recursiva**: Llamada a sí misma
 - El caso base no puede estar dentro de la función recursiva.
 ```java

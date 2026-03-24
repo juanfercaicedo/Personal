@@ -1,4 +1,5 @@
 package SegundoAño.EDA2.EjemploRecursividad;
+
 import java.util.Scanner;
 class ContarRecursivo{
     public static void main(String[] args) {
