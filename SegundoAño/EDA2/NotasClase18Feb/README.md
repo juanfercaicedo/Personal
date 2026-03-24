@@ -18,7 +18,7 @@
 | **2** | $f(1) \dots$ | **NO** | Caso recursivo general. |
 
 ---
-    - Mientras menos casos base es mejor
+- Mientras menos casos base es mejor
 - Cuando estemos en lista no decimos "restamos", decimos "reducimos un grado, tendiendo hacia el caso base"
 
 ## Contar números
