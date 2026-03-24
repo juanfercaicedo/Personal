@@ -11,6 +11,7 @@ public class numeroDigitos {
             return 1 + digitos(numero / 10);        
         }
     }
+    
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         int numeroUsuario;

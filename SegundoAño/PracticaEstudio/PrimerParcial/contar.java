@@ -11,6 +11,7 @@ public class contar {
             return numeroSuma + sumar(numeroSuma - 1);        
         }
     }
+    
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         int numeroUsuario;
