@@ -56,10 +56,6 @@ public static void ordenar(int[] array){
 
 - Exceso de escrituras: En el peor de los casos (array ordenado al revés), tiene que desplazar demasiados elementos uno a uno, lo que supone muchas operaciones de escritura en memoria.
 
-Aquí tienes el bloque completo para **Merge Sort** (Ordenamiento por Mezcla), siguiendo exactamente la misma estructura para que tus apuntes mantengan la coherencia. 
-
-Este es el algoritmo que marca el estándar del coste **O(n log n)** del que hablábamos al principio.
-
 ### Merge Sort
 
 - **Concepto principal:** Utiliza el paradigma **"Divide y Vencerás"** (*Divide and Conquer*). Divide el array por la mitad de forma recursiva hasta obtener subarrays de 1 solo elemento (un array de 1 elemento ya está ordenado por definición). Luego, va "fusionando" (*merging*) esos pequeños arrays en arrays más grandes y ordenados, hasta reconstruir el array original completo.
