@@ -193,3 +193,7 @@ private static int particion(int[] array, int inicio, int fin) {
 #### Desventajas
 - **Peor caso catastrófico:** Si el array ya está ordenado (o casi ordenado) y siempre elegimos el último o primer elemento como pivote, el rendimiento cae en picado a O(n²). (Para evitar esto en aplicaciones reales, el pivote suele elegirse al azar o calculando la mediana).
 - **No es Estable:** El proceso de partición y los intercambios pueden alterar el orden original de los elementos que tengan el mismo valor.
+
+
+## Continuación
+- [Notas en clase](../04Mayo/Notas.md)
