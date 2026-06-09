@@ -83,3 +83,44 @@ db.pedidos.createIndex(
     { partialFilterExpression: { estado: "activo" } } // Crea indices a aquellos pedidos que tengan el estado activo 
 )
 ```
+
+## Aggregation Framework
+```bash
+db.pedidos.aggregate([
+  // PASO 1: Filtrar solo los entregados
+  { 
+    $match: { estado: "entregado" } 
+  },
+  
+  // PASO 2: Agrupar por el nombre del cliente y sumar los totales de sus pedidos
+  { 
+    $group: { 
+      _id: "$cliente.nombre",                // El campo a agrupar lleva "$"
+      totalGastado: { $sum: "$precioTotal" } // Sumamos el precioTotal (lleva "$")
+    } 
+  },
+  
+  // PASO 3: Ordenar por el dinero gastado, de mayor a menor
+  { 
+    $sort: { totalGastado: -1 }              // Usamos el nuevo campo que creamos arriba
+  }
+])
+
+
+// 1. $match (Filtro inicial - ¡Igual que un find!)
+{ $match: { estado: "entregado" } }
+
+// 2. $group (Agrupar y calcular)
+// OBLIGATORIO: El campo por el que agrupas se debe llamar _id. 
+// OBLIGATORIO: Usar "$" antes del nombre de los campos originales.
+{ 
+  $group: { 
+    _id: "$nombreDelCampoAAgrupar", 
+    nuevoCampoCalculado: { $sum: "$campoASumar" } // Otros operadores: $avg, $max, $min
+  } 
+}
+
+// 3. $sort (Ordenar los resultados finales)
+// 1 = Ascendente (Menor a mayor) | -1 = Descendente (Mayor a menor)
+{ $sort: { nuevoCampoCalculado: -1 } }
+```
