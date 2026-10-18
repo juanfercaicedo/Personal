@@ -1,0 +1,16 @@
+@startuml diagram2
+left to right direction
+skinparam packageStyle rectangle
+
+actor Estudiante
+
+rectangle "BiblioTech" {
+  usecase "Pedir prestado un libro" as UC_Prestar
+  usecase "Revisar disponibilidad en estantes" as UC_Disponibilidad
+  usecase "Pagar multas" as UC_Multas
+}
+
+Estudiante -- UC_Prestar
+UC_Prestar ..> UC_Disponibilidad : <<include>>
+UC_Multas ..> UC_Prestar : <<extend>>\n(Condición: Multa > $5.00)
+@enduml

@@ -1,0 +1,16 @@
+@startuml diagram
+left to right direction
+skinparam packageStyle rectangle
+
+actor Socio
+
+rectangle "App Fit & Go" {
+  usecase "Reservar clase\n(Yoga o Crossfit)" as UC_Reservar
+  usecase "Autenticar usuario" as UC_Autenticar
+  usecase "Ofrecer plan de ejercicios suave" as UC_Plan
+}
+
+Socio -- UC_Reservar
+UC_Reservar ..> UC_Autenticar : <<include>>
+UC_Plan ..> UC_Reservar : <<extend>>\n(Condición: Lesión registrada)
+@enduml

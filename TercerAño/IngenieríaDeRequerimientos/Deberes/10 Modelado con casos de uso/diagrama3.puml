@@ -1,0 +1,18 @@
+@startuml diagram3
+left to right direction
+skinparam packageStyle rectangle
+
+actor Usuario
+actor "Google Maps" as Maps <<System>>
+
+rectangle "Rápido & Rico" {
+  usecase "Hacer pedido de comida" as UC_Pedido
+  usecase "Calcular costo de envío" as UC_Envio
+  usecase "Aplicar cupón de cumpleaños" as UC_Cupon
+}
+
+Usuario -- UC_Pedido
+UC_Pedido ..> UC_Envio : <<include>>
+UC_Envio -- Maps
+UC_Cupon ..> UC_Pedido : <<extend>>\n(Condición: Mes de cumpleaños)
+@enduml
