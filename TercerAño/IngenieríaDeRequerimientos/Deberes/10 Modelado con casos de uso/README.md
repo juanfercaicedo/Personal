@@ -25,7 +25,7 @@ UC_Plan ..> UC_Reservar : <<extend>>\n(Condición: Lesión registrada)
 - **Ejercicio en lenguaje natural**:  "Necesito que el estudiante pueda pedir prestado un libro. Obviamente, el sistema tiene que revisar siempre si el libro está disponible en los estantes. Si por alguna razón el estudiante tiene una multa pendiente de más de 5 dólares, el sistema debe bloquear el préstamo y mandarlo directo a la pantalla de 'Pago de Multas' para que se arregle de inmediato."
     - **Reto del estudiante:** ¿Cómo definimos técnicamente "arreglarse de inmediato"?.
 ### Diagramas: 
-``````plantuml
+```plantuml
 
 @startuml
 left to right direction
